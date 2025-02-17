@@ -30,9 +30,23 @@ mongoose
  .connect(URI, { useNewUrlParser: true, useUnifiedTopology: true, retryWrites: false })
  .then(() => console.log('Connected to MongoDB'))
  .catch((err) => console.log('Failed to connect to DB:', err));
+
 app.get('/', (req, res) => {
-    redisClient.set('products', 'products...');
-    res.send('<h1> Hello Adisi Grop now edit from hot reload </h1><h2>now new edit for hot relod dododo update now v.18 i need to update bat not restart whooooo aya whith my now </h2>')
+    res.send(`
+        <h1>Welcome to my project V1 !</h1>
+        <p>The project is set up using:</p>
+        <ul>
+            <li>Node.js with Express.js for the server</li>
+            <li>MongoDB for data storage</li>
+            <li>Redis for caching</li>
+            <li>Nginx as a reverse proxy</li>
+            <li>Docker for running all services efficiently</li>
+        </ul>
+        <p>The application is now running on <strong>http://localhost:4000</strong></p>
+        <h1>Regards, Mahmoud Adisi</h1>
+        <p>Mahmoud.aam@outlook.com</p>
+
+    `);
 });
 
 app.get('/data', async (req, res) => {
