@@ -12,8 +12,6 @@ services:
     depends_on:
       - mongo
       - redis
-    networks:
-      - my-network
   mongo:
     image: mongo
     restart: always
@@ -35,6 +33,7 @@ services:
         - mongo
   redis:
     image: redis
+
   nginx:
     image: nginx
     ports:
@@ -47,7 +46,4 @@ services:
       - my-network
 volumes:
   mongo-db:
-
-networks:
-  my-network:
     
